@@ -137,4 +137,14 @@ Compiler.init();
     ```
     Enter the String: Hello World!
     ```
+## Pull Request
+[Please read...](./submitting-a-pull-request.md)
 
+## Contribution
+
+Everyone is welcome to contribute to this project and build more functionality into it. Make a fork, improve/fix it and create a pull request. I'd love it! :) Also, I'll be mentioning your names over here!
+
+---
+---
+
+# -By Dev [Ankit Choudhary](https://github.com/ankit1509)
