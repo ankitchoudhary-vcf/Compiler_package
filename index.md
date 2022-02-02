@@ -1,37 +1,150 @@
-## Welcome to GitHub Pages
+# vcompiler
 
-You can use the [editor on GitHub](https://github.com/ankit1509/Compiler_package/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.1.2&x2=0)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 🎉 Version 1.x is live ! 🎉
 
-### Markdown
+## Introducation
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+---
 
-```markdown
-Syntax highlighted code block
+It is the npm package for the compilation of the code. Currently it supports the following programming languages:
 
-# Header 1
-## Header 2
-### Header 3
+    1. C language.
+    2. C++ language.
+    3. Python language.
 
-- Bulleted
-- List
+It can be used for the compilation of the code with or without the input.
 
-1. Numbered
-2. List
+---
 
-**Bold** and _Italic_ and `Code` text
+## Installation
 
-[Link](url) and ![Image](src)
+### NPM
+
+```
+npm install --save vcompiler
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### Yarn
 
-### Jekyll Themes
+```
+yarn add vcompiler
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ankit1509/Compiler_package/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Initializing the Compiler
 
-### Support or Contact
+---
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```javascript
+const Compiler = require("vcompiler");
+
+// initializing the Compiler instance.
+Compiler.init();
+```
+
+## Compiling the c or cpp code
+
+---
+
+- ### Without Input
+
+  ```javascript
+  const Compiler = require("vcompiler");
+  Compiler.init();
+  const getOutput = async () => {
+    try {
+      const output = Compiler.compileCppWithInput(
+        "cpp",
+        `#include <iostream> int main(){ std::cout <<"Hello World"<< std::endl; return 0; }`,
+        { OS: "Windows", cmd: "g++" }
+      );
+      console.log(output);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  ```
+
+  ### Output
+
+  ```
+  Hello World
+  ```
+
+- ### With Input
+
+  ```javascript
+  const Compiler = require("vcompiler");
+  Compiler.init();
+  const getOutput = async () => {
+    try {
+      const output = Compiler.compileCppWithInput(
+        "cpp",
+        `#include <iostream> int main(){ int a; std::cin>>a; std::cout <<"Hello World"<<std::endl<<a << std::endl; return 0; }`,
+        { OS: "Windows", cmd: "g++" },
+        `1`
+      );
+      console.log(output);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  ```
+
+  ### Output
+
+  ```
+  Hello World
+  1
+  ```
+
+## Compiling the python code
+
+---
+
+- ### Without Input
+    ```javascript
+      const Compiler = require("vcompiler")
+      Compiler.init()
+      const getOutput =  async () => {
+            try {
+              const output = Compiler.compilerPython("py",`print("Hello World")`, {OS: 'Windows'})console.log(output)
+              }
+            catch(err){
+                console.log(err)
+            }
+        }
+    ```
+    ### Output
+    ```
+    Hello World
+    ```
+- ### With Input
+    ```javascript
+        const Compiler = require("vcompiler")
+        Compiler.init()
+        const getOutput =  async () => {
+            try {
+              const output = Compiler.compilerPython("py",`input("Enter the String: ")`, {OS: 'Windows'}, `Hello World!`)console.log(output)
+              }
+            catch(err){
+                console.log(err)
+            }
+        }
+    ```
+    ### Output
+    ```
+    Enter the String: Hello World!
+    ```
+## Pull Request
+[Please read...](./submitting-a-pull-request.md)
+
+## Contribution
+
+Everyone is welcome to contribute to this project and build more functionality into it. Make a fork, improve/fix it and create a pull request. I'd love it! :) Also, I'll be mentioning your names over here!
+
+---
+---
+
+# -By Dev [Ankit Choudhary](https://github.com/ankit1509)
