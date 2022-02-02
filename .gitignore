@@ -1,0 +1,4 @@
+node_modules
+package.josn
+package-lock.json
+.npmignore
