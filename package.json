@@ -1,0 +1,39 @@
+{
+  "name": "vcompiler",
+  "version": "1.1.1",
+  "description": "It is the compiler Package or library used to compiler the different programming language.",
+  "main": "./dist/src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "npx ts-node ./test/index.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankit1509/Compiler_package"
+  },
+  "keywords": [
+    "Compiler",
+    "ankitChoudhary",
+    "Online-Compiler",
+    "Vcompiler",
+    "compilation",
+    "python-compiler",
+    "c-compiler",
+    "c++-compiler",
+    "compileWithInput",
+    "compileWithoutInput"
+  ],
+  "author": "Ankit Choudhary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankit1509/Compiler_package/issues"
+  },
+  "homepage": "https://github.com/ankit1509/Compiler_package#README",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.8",
+    "@types/uuid": "^8.3.4",
+    "typescript": "^4.5.4",
+    "uuid": "^8.3.2"
+  }
+}
