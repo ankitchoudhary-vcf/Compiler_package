@@ -1,6 +1,6 @@
 {
   "name": "vcompiler",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "It is the compiler Package or library used to compiler the different programming language.",
   "main": "./dist/src/index.js",
   "scripts": {
